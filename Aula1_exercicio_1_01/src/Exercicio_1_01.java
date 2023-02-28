@@ -1,9 +1,12 @@
 import java.io.EOFException;
 import java.util.Scanner;
+import java.util.regex.MatchResult;
 
-public class App {
+public class Exercicio_1_01 {
 	public static void main(String[] args) throws Exception {
-		System.out.println("Welcome to Bahiano's calculator!");
+		System.out.println("Welcome to Baiano's calculator!" +
+		 "/n Type your operation in the following format: 1 + 1 " +
+		 "/n Type a empty line to exit");
 
 		Scanner inputReader = new Scanner(System.in);
 		System.out.println("Insert your operation: ");
@@ -11,6 +14,10 @@ public class App {
 		try {
 			while (true) {
 				String input = inputReader.nextLine();
+				if (input.isEmpty()) {
+					System.out.println("See ya!");
+					break;
+				}
 				String[] inputArray = input.split("\\s+");
 
 				System.out.println("Executing: " + inputArray[0] + " " + inputArray[1] + " " + inputArray[2]);
@@ -20,6 +27,8 @@ public class App {
 				float b = Float.parseFloat(inputArray[2]);
 
 				Calculadora calc = new Calculadora(a, b);
+
+
 
 				switch (operacao) {
 					case "+":
@@ -45,6 +54,7 @@ public class App {
 			}
 		} catch (Exception e) {
 			System.out.println("Erro ao ler entrada: " + e.getMessage());
+			System.out.println("See ya!");
 		}
 	}
 }
