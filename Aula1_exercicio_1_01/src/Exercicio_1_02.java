@@ -2,13 +2,14 @@ import java.io.EOFException;
 import java.util.Scanner;
 import java.util.regex.MatchResult;
 
-public class Exercicio_1_01 {
+public class Exercicio_1_02 {
 	public static void main(String[] args) throws Exception {
-		System.out.println("EX 01 - Welcome to Baiano's calculator!" +
+		System.out.println("EX02 - Welcome to Baiano's calculator!" +
 		 "/n Type your operation in the following format: 1 + 1 " +
 		 "/n Type a empty line to exit");
 
 		Scanner inputReader = new Scanner(System.in);
+
 		System.out.println("Insert your operation: ");
 
 		try {
@@ -18,15 +19,8 @@ public class Exercicio_1_01 {
 					System.out.println("See ya!");
 					break;
 				}
+				
 				String[] inputArray = input.split("\\s+");
-
-				System.out.println("Executing: " + inputArray[0] + " " + inputArray[1] + " " + inputArray[2]);
-
-				String operacao = inputArray[1];
-				float a = Float.parseFloat(inputArray[0]);
-				float b = Float.parseFloat(inputArray[2]);
-
-				Calculadora calc = new Calculadora(a, b);
 
 
 
